@@ -25,5 +25,20 @@ describe("comparing inch", function() {
   //typeOf
   it("checking type", () => {
       assert.typeOf(converting.inch(0,0),'Boolean')
+  }),
+  // null check for feet
+  it("when given null should through exception", () => {
+    assert.isNotNull(true,converting.feet(0,0))
+  }),
+
+  //reference check for feet
+  it("checking reference", () => {
+      assert.isDefined(converting.feet(0,0),"Its defined!");
+  }),
+
+  
+  //typeOf check for feet
+  it("checking type", () => {
+      assert.typeOf(converting.feet(0,0),'Boolean')
   })
 });
