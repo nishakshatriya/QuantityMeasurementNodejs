@@ -3,40 +3,40 @@ const converting = require("../Measurement/quantitymeasurement");
 
 describe("comparing inch", function() {
   //inches
-  it("0 inch should return 0 inch", () => {
-    assert.equal(true, converting.inch(0, 0));
+    it("0 inch should return 0 inch", () => {
+     assert.equal(0, converting.inchTofeet("inch", "inch", 0));
   }),
     //feet
     it("0 feet should return 0 feet", () => {
-      assert.equal(true, converting.feet(0, 0));
+      assert.equal(0, converting.inchTofeet("feet", "feet", 0));
     }),
     // null check
     it("when given null should through exception", () => {
-      assert.isNotNull(true, converting.inch(0, 0));
+      assert.isNotNull(0, converting.inchTofeet("inch", "inch", 0));
     }),
     //reference check
     it("checking reference", () => {
-      assert.isDefined(converting.inch(0, 0), "Its defined!");
+      assert.isDefined(1,converting.inchTofeet("inch", "inch", 1),"Its defined!");
     }),
     //typeOf
     it("checking type", () => {
-      assert.typeOf(converting.inch(0, 0), "Boolean");
+      assert.typeOf(converting.inchTofeet("inch", "inch", 1), "Number");
     }),
     // null check for feet
     it("when given null should through exception", () => {
-      assert.isNotNull(true, converting.feet(0, 0));
+      assert.isNotNull(0, converting.inchTofeet("feet", "feet", 0));
     }),
     //reference check for feet
-    it("checking reference", () => {
-      assert.isDefined(converting.feet(0, 0), "Its defined!");
+    it("checking reference", () => { 
+      assert.isDefined( 1, converting.inchTofeet("feet", "feet", 1),"Its defined!" );
     }),
     //typeOf check for feet
     it("checking type", () => {
-      assert.typeOf(converting.feet(0, 0), "Boolean");
+      assert.typeOf(converting.inchTofeet("feet", "feet", 1), "Number");
     }),
     //check feet to inch conversion
     it(" 1 feet equals 12 inch", () => {
-      assert.equal(converting.inchTofeet("feet", "inch", 1), 12);
+      assert.equal(12, converting.inchTofeet("feet", "inch", 1));
     }),
     //check inch to feet conversion
     it(" 12 inch equals 1 feet", () => {
