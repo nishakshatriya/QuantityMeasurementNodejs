@@ -1,40 +1,31 @@
-'use strict'
+// "use strict";
+
+var jsonFile = require("../Measurement/unitTypes.json");
 module.exports = {
-  inch(inch1, inch2) {
-    if (inch1 === inch2) {
-      return true;
-    } else {
-      return false;
-    }
-  },
+  lengthConversion(unitType1, unitType2, unitValue) {
+    var result,
+      input = unitValue;
 
-  feet(feet1, feet2) {
-    if (feet1 === feet2) {
-      return true;
-    } else {
-      return false;
-    }
-  },
+    var keys = Object.keys(jsonFile);
 
-  inchTofeet(toType,fromType, result) {
-    var unitsList = ["inch","feet"]
-    if (unitsList[0] == fromType && unitsList[1] == toType) {
-        if(fromType == unitsList[0]){
-            result = result * 12;
-      console.log('result is -->',result);  
-            
+    for (var i = 0; i < keys.length; i++) {
+      console.log("unit------------>", keys[i]);
+
+      if (keys[i] == unitType2) {
+        var something = Object.keys(jsonFile[keys[i]]);
+        console.log("something value --->", something);
+        for (var j = 0; j < something.length; j++) {
+          console.log(something[j] + "ajsdhgajhsdgasjhdas" + unitType1);
+
+          if (something[j] == unitType1) {
+            result = jsonFile[keys[i]][something[j]] * input;
+            console.log("result value --------------->", result);
+
+            var result1 = Math.round(result);
+          }
         }
-        return result;
-     }  
-     
-    
-     if(unitsList[1] == fromType && unitsList[0] == toType){
-         if(fromType == unitsList[1]) {
-             result = result / 12;
-                console.log('result is -->',result);
-         }
-         return result;
-     }
-     
-}
-}
+        return result1;
+      }
+    }
+  }
+};
