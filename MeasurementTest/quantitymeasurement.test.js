@@ -94,5 +94,9 @@ describe("unit additions",function(){
   //addition of 2 inch and 2.5cm = 3inch
   it("addition is 3inch",() => {
     assert.equal(3,converting.getAddition("inch",2,"cm",2.5,"length"));
+  }),
+  //addition of 1gl and 3.78lt equals 7.57ltr
+  it("addition is 7.57 ltr",()=>{
+    assert.equal(7.56541,converting.getAddition("gallon",1,"litre",3.78,"volumn"));
   })
 });
