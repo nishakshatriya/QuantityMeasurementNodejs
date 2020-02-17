@@ -82,6 +82,10 @@ describe("converting units", function() {
   }),
   it("1 tonne equals 1000kgs",() => {
     assert.equal(1000,converting.lengthConversion("tonne","mass",1));
+  }),
+  it("Converting fahrenheit to celcius", () => {
+    var result1 = Math.ceil(converting.lengthConversion("fahrenheit","temperature",212));
+    assert.equal(100,result1);
   })
 });
 //--------------- ADDITION ----------------------
