@@ -9,5 +9,10 @@
     "gallon": 3.78541,
     "litre": 1,
     "ml": 1000
+  },
+  "mass":{
+    "kilograms":1,
+    "tonne":0.001,
+    "grams":1000
   }
 }

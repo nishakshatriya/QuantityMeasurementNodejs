@@ -79,6 +79,9 @@ describe("converting units", function() {
   //check 1kg equals 1000gms
   it("1 kg equals 1000gm",() => {
     assert.equal(1,converting.lengthConversion("kilograms","mass",1));
+  }),
+  it("1 tonne equals 1000kgs",() => {
+    assert.equal(0.001,converting.lengthConversion("tonne","mass",1));
   })
 });
 //--------------- ADDITION ----------------------

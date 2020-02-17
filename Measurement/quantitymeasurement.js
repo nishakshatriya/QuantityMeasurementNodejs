@@ -31,7 +31,7 @@ module.exports = {
     var first = this.lengthConversion(fromType,unitValue,first);
     var second = this.lengthConversion(toType,unitValue,second);
     
-    var additionResult = Math.ceil(first + second);
+    var additionResult = (first + second);
     console.log('addition is -->',additionResult);
 
     return additionResult;
