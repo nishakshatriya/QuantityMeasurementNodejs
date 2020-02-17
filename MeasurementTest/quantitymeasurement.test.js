@@ -81,5 +81,9 @@ describe("unit additions",function(){
   //addition of 1ft + 1ft equals 24 inch
   it("addition is 24inch",() => {
     assert.equal(24,converting.getAddition("feet",1,"feet",1,"length"));
+  }),
+  //addition of 2 inch and 2.5cm = 3inch
+  it("addition is 3inch",() => {
+    assert.equal(3,converting.getAddition("inch",2,"cm",2.5,"length"));
   })
 });
