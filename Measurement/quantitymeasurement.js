@@ -29,8 +29,11 @@ module.exports = {
 
   getAddition(fromType,first,toType,second,unitValue){
     var first = this.lengthConversion(fromType,unitValue,first);
-    var second = this.lengthConversion(fromType,unitValue,second);
-    var additionResult = first + second;
+    var second = this.lengthConversion(toType,unitValue,second);
+    
+    var additionResult = Math.ceil(first + second);
+    console.log('addition is -->',additionResult);
+
     return additionResult;
   }
   
