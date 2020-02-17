@@ -30,6 +30,9 @@ module.exports = {
   getAddition(fromType,first,toType,second,unitValue){
     var first = this.lengthConversion(fromType,unitValue,first);
     var second = this.lengthConversion(toType,unitValue,second);
+    console.log(first);
+    console.log(second);
+    
     
     var additionResult = (first + second);
     console.log('addition is -->',additionResult);

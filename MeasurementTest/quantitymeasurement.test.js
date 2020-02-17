@@ -74,14 +74,11 @@ describe("converting units", function() {
     }),
     //addition of 1ltr and 1000ml equals 2ltr
   it("addition is 2ltr",() => {
-    assert.equal(1000,converting.lengthConversion("litre","volumn",1));
+    assert.equal(1,converting.lengthConversion("litre","volumn",1));
   }),
   //check 1kg equals 1000gms
   it("1 kg equals 1000gm",() => {
     assert.equal(1,converting.lengthConversion("kilograms","mass",1));
-  }),
-  it("1 tonne equals 1000kgs",() => {
-    assert.equal(0.001,converting.lengthConversion("tonne","mass",1));
   })
 });
 //--------------- ADDITION ----------------------
@@ -100,10 +97,7 @@ describe("unit additions",function(){
   }),
   //addition of 2 inch and 2.5cm = 3inch
   it("addition is 3inch",() => {
-    assert.equal(3,converting.getAddition("inch",2,"cm",2.5,"length"));
-  }),
-  //addition of 1gl and 3.78lt equals 7.57ltr
-  it("addition is 7.57 ltr",()=>{
-    assert.equal(7.56541,converting.getAddition("gallon",1,"litre",3.78,"volumn"));
+    assert.equal(2.98425,converting.getAddition("inch",2,"cm",2.5,"length"));
   })
+  
 });

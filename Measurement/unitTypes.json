@@ -12,7 +12,7 @@
   },
   "mass":{
     "kilograms":1,
-    "tonne":0.001,
-    "grams":1000
+    "tonne":1000,
+    "grams":0.001
   }
 }
