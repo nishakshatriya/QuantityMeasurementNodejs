@@ -71,7 +71,11 @@ describe("converting units", function() {
     //check 1 gallon equals 3.78 lt
     it("1 gl equals 3.78lt",() => {
       assert.equal(3.78541,converting.lengthConversion("gallon","volumn",1));
-    })
+    }),
+    //addition of 1ltr and 1000ml equals 2ltr
+  it("addition is 2ltr",() => {
+    assert.equal(1000,converting.lengthConversion("litre","volumn",1));
+  })
 });
 //--------------- ADDITION ----------------------
 describe("unit additions",function(){
