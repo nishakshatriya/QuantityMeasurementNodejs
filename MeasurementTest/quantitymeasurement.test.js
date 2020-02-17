@@ -1,7 +1,8 @@
 const assert = require("chai").assert;
 const converting = require("../Measurement/quantitymeasurement");
 
-describe("comparing inch", function() {
+// ------------ CONVERSION ------------------
+describe("converting units", function() {
   //inches
     it("0 inch should return 0 inch", () => {
      assert.equal(0, converting.lengthConversion("inch", "length", 0));
@@ -66,5 +67,11 @@ describe("comparing inch", function() {
     it("1 ft not equals 1 yd",() => {
       assert.notEqual(1,converting.lengthConversion("feet","length",1));
     })
-    
+});
+//--------------- ADDITION ----------------------
+describe("unit additions",function(){
+  //adding 2inch + 2inch equals 4 
+  it("addition is 4",() => {
+    assert.equal(4,converting.getAddition("inch",2,"inch",2,"length"));
+  })
 });

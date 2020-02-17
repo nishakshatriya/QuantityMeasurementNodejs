@@ -1,31 +1,37 @@
-// "use strict";
+ "use strict";
 
 var jsonFile = require("../Measurement/unitTypes.json");
 module.exports = {
-  lengthConversion(unitType1, unitType2, unitValue) {
+  lengthConversion(fromType, toType, unitValue) {
     var result,
-      input = unitValue;
+      inputValue = unitValue;
 
     var keys = Object.keys(jsonFile);
 
     for (var i = 0; i < keys.length; i++) {
-      console.log("unit------------>", keys[i]);
+      console.log("unit--->", keys[i]);
 
-      if (keys[i] == unitType2) {
-        var something = Object.keys(jsonFile[keys[i]]);
-        console.log("something value --->", something);
-        for (var j = 0; j < something.length; j++) {
-          console.log(something[j] + "ajsdhgajhsdgasjhdas" + unitType1);
+      if (keys[i] == toType) {
+        var retrieveKeys = Object.keys(jsonFile[keys[i]]);
+        console.log("something value --->", retrieveKeys);
+        for (var j = 0; j < retrieveKeys.length; j++) {
+          console.log(retrieveKeys[j] + "--->" + fromType);
 
-          if (something[j] == unitType1) {
-            result = jsonFile[keys[i]][something[j]] * input;
-            console.log("result value --------------->", result);
-
-            var result1 = Math.round(result);
+          if (retrieveKeys[j] == fromType) {
+            result = Math.round(jsonFile[keys[i]][retrieveKeys[j]] * inputValue);
+            console.log("result value --->", result);
           }
         }
-        return result1;
+        return result;
       }
     }
+  },
+
+  getAddition(fromType,first,toType,second,unitValue){
+    var first = this.lengthConversion(fromType,unitValue,first);
+    var second = this.lengthConversion(fromType,unitValue,second);
+    var additionResult = first + second;
+    return additionResult;
   }
+  
 };
