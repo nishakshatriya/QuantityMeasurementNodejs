@@ -1,10 +1,13 @@
 {
-    "length": 
-      {
-        "inch":1,
-        "feet": 12,
-        "yard": 36,
-        "cm":0.393700
-      
-      } 
+  "length": {
+    "inch": 1,
+    "feet": 12,
+    "yard": 36,
+    "cm": 0.3937
+  },
+  "volumn": {
+    "gallon": 3.78541,
+    "litre": 1,
+    "ml": 1000
+  }
 }

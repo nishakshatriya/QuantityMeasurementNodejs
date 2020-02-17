@@ -1,6 +1,7 @@
 const assert = require("chai").assert;
 const converting = require("../Measurement/quantitymeasurement");
 
+
 // ------------ CONVERSION ------------------
 describe("converting units", function() {
   //inches
@@ -66,6 +67,10 @@ describe("converting units", function() {
     //check 1 feet not equals 1 yard
     it("1 ft not equals 1 yd",() => {
       assert.notEqual(1,converting.lengthConversion("feet","length",1));
+    }),
+    //check 1 gallon equals 3.78 lt
+    it("1 gl equals 3.78lt",() => {
+      assert.equal(3.78541,converting.lengthConversion("gallon","volumn",1));
     })
 });
 //--------------- ADDITION ----------------------

@@ -18,7 +18,7 @@ module.exports = {
           console.log(retrieveKeys[j] + "--->" + fromType);
 
           if (retrieveKeys[j] == fromType) {
-            result = Math.round(jsonFile[keys[i]][retrieveKeys[j]] * inputValue);
+            result = (jsonFile[keys[i]][retrieveKeys[j]] * inputValue);
             console.log("result value --->", result);
           }
         }
