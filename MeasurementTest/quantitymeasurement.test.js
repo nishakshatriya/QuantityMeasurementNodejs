@@ -75,6 +75,10 @@ describe("converting units", function() {
     //addition of 1ltr and 1000ml equals 2ltr
   it("addition is 2ltr",() => {
     assert.equal(1000,converting.lengthConversion("litre","volumn",1));
+  }),
+  //check 1kg equals 1000gms
+  it("1 kg equals 1000gm",() => {
+    assert.equal(1,converting.lengthConversion("kilograms","mass",1));
   })
 });
 //--------------- ADDITION ----------------------
