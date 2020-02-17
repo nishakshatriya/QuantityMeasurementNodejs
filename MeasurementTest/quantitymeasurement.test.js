@@ -77,5 +77,9 @@ describe("unit additions",function(){
   //addition of 1feet and 2inch equals 14inch
   it("addition is 14",() => {
     assert.equal(14,converting.getAddition("inch",2,"feet",1,"length"));
+  }),
+  //addition of 1ft + 1ft equals 24 inch
+  it("addition is 24inch",() => {
+    assert.equal(24,converting.getAddition("feet",1,"feet",1,"length"));
   })
 });
