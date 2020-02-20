@@ -10,9 +10,13 @@
     "litre": 1,
     "ml": 1000
   },
-  "mass":{
-    "kilograms":1,
-    "tonne":1000,
-    "grams":0.001
+  "mass": {
+    "kilograms": 1,
+    "tonne": 1000,
+    "grams": 0.001
+  },
+  "temperature": {
+    "celcius": 1,
+    "fahrenheit": 0.4716
   }
 }
