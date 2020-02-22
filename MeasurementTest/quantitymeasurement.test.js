@@ -76,8 +76,8 @@ describe("converting units", function () {
       var litre = converting.unitConversion("litre", "volumn", 3.78);
       assert.equal(gallon, litre);
     }),
-    //addition of 1ltr and 1000ml equals 2ltr
-    it("addition is 2ltr", () => {
+   // check 1ltr equals 1000ml 
+    it("1 ltr equals 1000ml", () => {
       var litre = converting.unitConversion("litre", "volumn", 1);
       var ml = converting.unitConversion("ml", "volumn", 1000);
       assert.equal(litre, ml);
@@ -104,26 +104,38 @@ describe("converting units", function () {
 describe("unit additions", function () {
   //adding 2inch + 2inch equals 4
   it("addition is 4", () => {
-      assert.equal(4, converting.getAddition("inch", 2, "inch", 2, "length"));
+    var value1 = converting.unitConversion("inch","length",2);
+    var value2 = converting.unitConversion("inch","length",2);
+    assert.equal(4,converting.getAddition(value1,value2));
     }),
-    //addition of 1feet and 2inch equals 14inch
+    // addition of 1feet and 2inch equals 14inch
     it("addition is 14", () => {
-      assert.equal(14, converting.getAddition("inch", 2, "feet", 1, "length"));
+      var value1 = converting.unitConversion("inch","length",2);
+      var value2 = converting.unitConversion("feet","length",1);
+      assert.equal(14,converting.getAddition(value1,value2));
     }),
     //addition of 1ft + 1ft equals 24 inch
     it("addition is 24inch", () => {
-      assert.equal(24, converting.getAddition("feet", 1, "feet", 1, "length"));
+      var value1 = converting.unitConversion("feet","length",1);
+      var value2 = converting.unitConversion("feet","length",1);
+      assert.equal(24,converting.getAddition(value1,value2));
     }),
     //addition of 2 inch and 2.5cm = 3inch
     it("addition is 3inch", () => {
-      assert.equal(2.98425, converting.getAddition("inch", 2, "cm", 2.5, "length"));
+      var value1 = converting.unitConversion("inch","length",2);
+      var value2 = converting.unitConversion("cm","length",2.5);
+      assert.equal(3,Math.ceil(converting.getAddition(value1,value2)));
     }),
-    //addition of 1gl and 3.78lt equals 7.57ltr
+    //addition of 1gl and 3.78lt equals 7.56ltr
     it("addition is 7.57 ltr", () => {
-      assert.equal(7.56, converting.getAddition("gallon", 1, "litre", 3.78, "volumn"));
+      var value1 = converting.unitConversion("gallon","volumn",1);
+      var value2 = converting.unitConversion("litre","volumn",3.78);
+      assert.equal(7.56,converting.getAddition(value1,value2));
     }),
     //addition of 1tonne and 1000gm equals 1001kg
     it("addition is 1001kg ", () => {
-      assert.equal(1001, converting.getAddition("tonne", 1, "grams", 1000, "mass"));
+      var value1 = converting.unitConversion("tonne","mass",1);
+      var value2 = converting.unitConversion("grams","mass",1000);
+      assert.equal(1001,converting.getAddition(value1,value2));
     });
 });
