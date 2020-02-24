@@ -2,7 +2,7 @@
 
 var jsonFile = require("../Measurement/unitTypes.json");
 module.exports = {
-  lengthConversion(fromType, toType, unitValue) {
+  unitConversion(fromType, toType, unitValue) {
     var result,
       inputValue = unitValue;
 
@@ -14,7 +14,6 @@ module.exports = {
         for (var j = 0; j < retrieveKeys.length; j++) {
           if (retrieveKeys[j] == fromType) {
             result = jsonFile[keys[i]][retrieveKeys[j]] * inputValue;
-            console.log("result value --->", result);
           }
         }
         return result;
@@ -22,10 +21,8 @@ module.exports = {
     }
   },
 
-  getAddition(fromType, first, toType, second, unitValue) {
-    var first = this.lengthConversion(fromType, unitValue, first);
-    var second = this.lengthConversion(toType, unitValue, second);
-    var additionResult = first + second;
+  getAddition(value1,value2) {
+    var additionResult = value1 + value2;
     return additionResult;
   }
 };
